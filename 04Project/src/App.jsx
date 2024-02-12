@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
+import Button from './Button'
 
 
 
@@ -9,15 +10,15 @@ function App() {
   
   const [color , setColor] = useState(Colors[parseInt(Math.random() * Colors.length)])
   
-  function Button(props){
-    let color = props.Color;
-    return <button 
-    onClick={()=> setColor(props.Color)}
-    style={{backgroundColor:color,
-            color:color === 'white'||color === 'lavender'?'black': 'white'}}
-    className="outline-none px-4 py-1 rounded-full  shadow-lg hover:border-[1px] border-orange-500">{props.Name}</button>
-}
-
+//   function Button(props){
+//     let color = props.Color;
+//     return <button 
+//     onClick={()=> setColor(props.Color)}
+//     style={{backgroundColor:color,
+//             color:color === 'white'||color === 'lavender'?'black': 'white'}}
+//     className="outline-none px-4 py-1 rounded-full  shadow-lg hover:border-[1px] border-orange-500">{props.Name}</button>
+// }
+  
   return (
   <div className="w-full h-screen duration-200"
   style={{backgroundColor: color}}>
@@ -56,16 +57,16 @@ function App() {
         <button onClick={() => setColor("black")}
         className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
         style={{backgroundColor: "black"}}>Black</button> */}
-          <Button Color="red" Name='Red' onClick={() => setColor('red')} />
-          <Button Color="green" Name='Green' onClick={() => setColor('green')} />
-          <Button Color="blue" Name='Blue' onClick={() => setColor('blue')} />
-          <Button Color="gray" Name='Gray' onClick={() => setColor('gray')} />
-          <Button Color="olive" Name='Olive' onClick={() => setColor('olive')} />
-          <Button Color="yellow" Name='Yellow' onClick={() => setColor('yellow')} />
-          <Button Color="pink" Name='Pink' onClick={() => setColor('pink')} />
-          <Button Color="lavender" Name='Lavender' onClick={() => setColor('lavender')} />
-          <Button Color="white" Name='White' onClick={() => setColor('white')} />
-          <Button Color="black" Name='Black' onClick={() => setColor('black')} />
+          <Button Color="red" Name='Red' backgroundColorChange={() => setColor('red')}/>
+          <Button Color="green" Name='Green'  backgroundColorChange={() => setColor('green')}/>
+          <Button Color="blue" Name='Blue' backgroundColorChange={() => setColor('blue')}/>
+          <Button Color="gray" Name='Gray' backgroundColorChange={() => setColor('gray')}/>
+          <Button Color="olive" Name='Olive' backgroundColorChange={() => setColor('olive')}/>
+          <Button Color="yellow" Name='Yellow'  backgroundColorChange={() => setColor('yellow')}/>
+          <Button Color="pink" Name='Pink' backgroundColorChange={() => setColor('pink')} />
+          <Button Color="lavender" Name='Lavender' backgroundColorChange={() => setColor('lavender')}/>
+          <Button Color="white" Name='White' backgroundColorChange={() => setColor('white')}/>
+          <Button Color="black" Name='Black' backgroundColorChange={() => setColor('black')}/>
         </div>
       </div>
   </div>
