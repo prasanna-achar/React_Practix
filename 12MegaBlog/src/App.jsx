@@ -1,15 +1,10 @@
-import React from 'react'
-
+import conf from './conf/conf'
+import './App.css'
 
 function App() {
-  console.log(import.meta.env.VITE_APPWRITE_URL);
- 
-
+  console.log(conf.appwriteUrl)  
   return (
-    <>
-      <h1>A blog with appwrite
-      </h1>
-    </>
+   <></>
   )
 }
 
