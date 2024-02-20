@@ -8,7 +8,7 @@ export class AuthService{
         this.client
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId)
-        this.account = new Account(client)
+        this.account = new Account(this.client)
     }
     async createAccount({email, password, name}){
         try {
@@ -39,7 +39,6 @@ export class AuthService{
         }
         return null;
     }
-
     async logout(){
         try {
             return await this.account.deleteSessions()
